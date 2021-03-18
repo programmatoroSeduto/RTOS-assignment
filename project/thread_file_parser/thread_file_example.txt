@@ -1,0 +1,7 @@
+format for one task:
+J	<T in ms>	<C in cycles>
+
+example:
+J	300	500
+J	500	50
+J	800	1002
