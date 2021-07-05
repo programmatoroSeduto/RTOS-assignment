@@ -1,0 +1,1 @@
+cmd_/home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.mod := { echo  /home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.o;  echo; } > /home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.mod

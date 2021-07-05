@@ -1,7 +1,7 @@
 #! /bin/bash
 
 ifneq ($(KERNELRELEASE),)
-	obj-m := module_main.o
+	obj-m := RTOS_module_GF.o
 else
 	KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 	PWD := $(shell pwd)

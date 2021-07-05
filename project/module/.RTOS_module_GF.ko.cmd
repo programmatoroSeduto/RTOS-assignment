@@ -1,0 +1,1 @@
+cmd_/home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.ko /home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.o /home/kk/Desktop/RTOS-assignment/project/module/RTOS_module_GF.mod.o;  true
