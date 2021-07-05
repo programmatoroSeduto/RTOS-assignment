@@ -6,7 +6,8 @@
 #include <linux/types.h>
 #include <linux/cdev.h>
 #include <linux/semaphore.h>
-//include <asm/semaphore.h>
+#include <linux/uaccess.h>
+
 
 #define BUF_LEN 2000
 
@@ -43,7 +44,7 @@ static int add_trace( char* trace )
 	return 0;
 }
 
-static int clear_buffer ( void )
+static int clear_buffer( void )
 {
 	int i;
 	
@@ -67,32 +68,89 @@ static int clear_buffer ( void )
 
 /////////////////////// SYSCALLS
 
+static struct semaphore syscalls_sem;
+
 // open
 int mymodule_open(struct inode *inode, struct file *filp)
 {
-	// ... open ...
-	return -1;
+	return 0;
 }
 
 // close
 int mymodule_release(struct inode *inode, struct file *filp)
 {
-	// ... close ...
-	return -1;
+	return 0;
 }
 
 // read
 ssize_t mymodule_read(struct file* filp, char __user *buff, size_t count, loff_t* offp)
 {
-	// ... read ...
-	return -1;
+	ssize_t retval = 0;
+
+	// take the semaphore
+	if (down_interruptible( &syscalls_sem ))
+		return -ERESTARTSYS;
+
+	// print the buffer
+	printk( KERN_INFO "buffer content: %s", buffer );
+
+	// free the semaphore
+        up( &syscalls_sem );
+
+	return retval;
 }
 
 // write
 ssize_t mymodule_write(struct file* filp, const char __user *buff, size_t count, loff_t* offp)
 {
-	// ... write ...
-	return -1;
+	ssize_t retval = 0;
+	char* buffer = "\0\0";
+	
+	printk( KERN_INFO " WRITE: count=%ld ", count);
+
+	// take the semaphore
+	if ( down_interruptible( &syscalls_sem ) )
+		return -ERESTARTSYS;
+
+        // if count is bigger that memsize, exit
+	if( count >= BUF_LEN - buffer_idx )
+	{
+		// error: attempting to write too many data
+		printk( KERN_ERR " WRITE: ERROR not memy enough, required %ld on %d free.", count,(BUF_LEN - buffer_idx) );
+		retval = -ENOMEM;
+		goto out;
+	}
+	
+	// if count is not 2, not valid
+	if( count != 2 )
+	{
+		// error: not a valid string
+		printk( KERN_ERR " WRITE: ERROR size of the string has not len 2 (count=%ld)", count );
+		retval = -EINVAL;
+		goto out;
+	}
+	
+	// copy from user space
+	printk( KERN_INFO " WRITE: copy_from_user=%ld", retval = copy_from_user (buffer, buff, count));
+	if( retval < 0 )
+	{
+		// error: unable to read from use space
+		printk( KERN_ERR " WRITE: ERROR unable to read from use space" );
+		retval = -ERESTARTSYS;
+		goto out;
+	}
+
+	// add the trace to the queue
+	add_trace( buffer );
+	
+	// update retval
+	retval = count;
+
+	// free the semaphore
+	out:
+        up( &syscalls_sem );
+
+	return retval;
 }
 
 struct file_operations RTOS_module_GF_fops = {
@@ -117,10 +175,8 @@ static int __init mymodule_init_funct( void )
 	printk( KERN_NOTICE " RTOS_module_GF      starting... " );
 	
 	clear_buffer( );
-	//init_mutex( &buffer_sem );
-	//mutex_init( &buffer_sem );
-	//init_MUTEX( &buffer_sem );
 	sema_init( &buffer_sem, 1 );
+	sema_init( &syscalls_sem, 1 );
 	
 	// ... init ...
 	printk( KERN_INFO "Allocating a major number ... " );
