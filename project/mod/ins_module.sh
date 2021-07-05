@@ -10,4 +10,4 @@ insmod module_main.ko
 major = $(awk "\\$2 == \"$module\" {print \\$1}" /proc/devices)
 
 # create the channel
-mknod /dev/dev_$module c $major 1
+mknod /dev/RTOS_$module c $major 1
