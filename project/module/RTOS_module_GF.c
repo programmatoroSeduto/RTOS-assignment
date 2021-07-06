@@ -7,6 +7,8 @@
 #include <linux/cdev.h>
 #include <linux/semaphore.h>
 #include <linux/uaccess.h>
+#include <linux/slab.h>
+#include <linux/kernel.h>
 
 
 /*
@@ -15,11 +17,26 @@ sudo rmmod dtest && dmesg
 
 LOG PRINT:
 https://stackoverflow.com/questions/38822599/why-printk-doesnt-print-message-in-kernel-logdmesg
+
+error in copy_from_user:
+https://stackoverflow.com/questions/63969620/what-is-an-simple-example-of-copy-from-user
+
+ATOI IN KERNE SPACE: use 'int kstrtol(char* from, int base, int* to)'
+#include <linux/kernel.h>
+https://cpp.hotexamples.com/it/examples/-/-/kstrtol/cpp-kstrtol-function-examples.html
+
+HOW TO USE THE MODULE:
+read: simple command 'dump' (see dmesg)
+write:
+	is the argument has len=1 clear the buffer
+	otherwise, 
+		if len=2 write
+		else error
 */
 
 
 
-#define RTOS_PROJ_BUF_LEN 200000
+#define RTOS_PROJ_BUF_LEN 2000000
 
 static char buffer[ RTOS_PROJ_BUF_LEN ];
 static int buffer_idx;
@@ -90,45 +107,50 @@ static int clear_buffer( void )
 // open
 int mymodule_open(struct inode *inode, struct file *filp)
 {
+	printk( KERN_INFO "-> OPEN request" );
 	return 0;
 }
 
 // close
 int mymodule_release(struct inode *inode, struct file *filp)
 {
+	printk( KERN_INFO "-> RELEASE request" );
 	return 0;
 }
 
 // read
 ssize_t mymodule_read(struct file* filp, char __user *buff, size_t count, loff_t* offp)
 {
-	ssize_t retval = 0;
-
-	// take the semaphore
+	
+	
 	if (down_interruptible( &syscalls_sem ))
 		return -ERESTARTSYS;
-
+	
 	// print the buffer
-	printk( KERN_INFO "buffer content: %s\n", buffer );
+	if ( buffer_idx > 0 )
+		printk( KERN_INFO "READ: %s\n", buffer );
+	else
+		printk( KERN_INFO "READ: empty buffer." );
+	
+	up( &syscalls_sem );
 
-	// free the semaphore
-        up( &syscalls_sem );
-
-	return retval;
+	return 0;
 }
 
 // write
 ssize_t mymodule_write(struct file* filp, const char __user *buff, size_t count, loff_t* offp)
 {
-	ssize_t retval = 0;
-	char* buffer = "\0\0";
 	
-	printk( KERN_INFO " WRITE: count=%ld \n", count);
-
+	ssize_t retval = 0;
+	char* data_from_user;
+	
+	data_from_user = (char*) kmalloc( 2, GFP_KERNEL );
+	//printk( KERN_INFO " WRITE: count=%ld \n", count);
+	
 	// take the semaphore
 	if ( down_interruptible( &syscalls_sem ) )
 		return -ERESTARTSYS;
-
+	
         // if count is bigger that memsize, exit
 	if( count >= (RTOS_PROJ_BUF_LEN - buffer_idx) )
 	{
@@ -139,7 +161,15 @@ ssize_t mymodule_write(struct file* filp, const char __user *buff, size_t count,
 	}
 	
 	// if count is not 2, not valid
-	if( count != 2 )
+	if ( count == 1 )
+	{
+		// clear the buffer
+		printk( KERN_NOTICE "WRITE: 'clean' command received, cleaning buffer.\n" );
+		clear_buffer( );
+		retval = 1;
+		goto out;
+	}
+	else if ( count != 2 )
 	{
 		// error: not a valid string
 		printk( KERN_ERR " WRITE: ERROR size of the string has not len 2 (count=%ld)\n", count );
@@ -148,7 +178,8 @@ ssize_t mymodule_write(struct file* filp, const char __user *buff, size_t count,
 	}
 	
 	// copy from user space
-	printk( KERN_INFO " WRITE: copy_from_user=%ld\n", retval = copy_from_user (buffer, buff, count));
+	retval = copy_from_user (data_from_user, buff, count);
+	//printk( KERN_INFO " WRITE: copy_from_user=%ld\n", retval);
 	if( retval < 0 )
 	{
 		// error: unable to read from use space
@@ -156,13 +187,14 @@ ssize_t mymodule_write(struct file* filp, const char __user *buff, size_t count,
 		retval = -ERESTARTSYS;
 		goto out;
 	}
+	printk( KERN_INFO "WRITE: string from user '%s'\n", data_from_user );
 
 	// add the trace to the queue
-	add_trace( buffer );
+	add_trace( data_from_user );
 	
 	// update retval
 	retval = count;
-
+	
 	// free the semaphore
 	out:
         up( &syscalls_sem );

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-clear
+# clear
 echo "mounting the module..."
 
 insmod ./RTOS_module_GF.ko
