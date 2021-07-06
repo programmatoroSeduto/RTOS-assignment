@@ -216,7 +216,12 @@ int main( int argc, char** argv )
     printf( "computing misses...\n" );
     compute_miss();
     printf( "\n\n" );
+    
+    // dump
+    printf( "dump command to the module (see dmesg)\n" );
+    module_dump();
 
+    printf( "closing module\n" );
     module_close();
 
     printf( "DONE! closing...\n\n" );

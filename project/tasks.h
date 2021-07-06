@@ -14,7 +14,7 @@
 // how many periodi tasks
 #define N_PERIODIC_TASKS 3
 // how many iteration for each task
-#define N_CYCLES 10000
+#define N_CYCLES 100
 
 // periods of the periodic tasks to be scheduled
 long int Jperiod[N_PERIODIC_TASKS];
