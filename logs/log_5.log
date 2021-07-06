@@ -1,0 +1,355 @@
+using values: 
+	 T1=300	C1=280
+	 T2=500	C2=1000
+	 T3=800	C3=2000
+initializing data...
+simulation of 3 real time periodic tasks.
+Computing utilization factor...
+
+ID 0 , period: 300000 , cycles: 280
+Testing the task 50 times ...
+[0] 0.0317       [1] 0.0245       [2] 0.0240       [3] 0.0240       [4] 0.0241       [5] 0.0241       [6] 0.0241       [7] 0.0241       [8] 0.0240       [9] 0.0240       [10] 0.0241       [11] 0.0240       [12] 0.0241       [13] 0.0240       [14] 0.0240       [15] 0.0240       [16] 0.0239       [17] 0.0241       [18] 0.0241       [19] 0.0240       [20] 0.0240       [21] 0.0240       [22] 0.0240       [23] 0.0241       [24] 0.0239       [25] 0.0240       [26] 0.0240       [27] 0.0239       [28] 0.0240       [29] 0.0240       [30] 0.0240       [31] 0.0241       [32] 0.0240       [33] 0.0239       [34] 0.0240       [35] 0.0239       [36] 0.0240       [37] 0.0240       [38] 0.0239       [39] 0.0240       [40] 0.0241       [41] 0.0239       [42] 0.0240       [43] 0.0239       [44] 0.0240       [45] 0.0241       [46] 0.0239       [47] 0.0240       [48] 0.0241       [49] 0.0240       
+Average Utilization Factor for task ID 0: 0.0242 , computation time: 7252ns
+
+ID 1 , period: 500000 , cycles: 1000
+Testing the task 50 times ...
+[0] 0.0505       [1] 0.0504       [2] 0.0504       [3] 0.0504       [4] 0.0503       [5] 0.0503       [6] 0.4910       [7] 0.0529       [8] 0.0527       [9] 0.0527       [10] 0.0527       [11] 0.0527       [12] 0.0527       [13] 0.0527       [14] 0.0527       [15] 0.0526       [16] 0.0527       [17] 0.0527       [18] 0.0527       [19] 0.0527       [20] 0.0527       [21] 0.0526       [22] 0.0527       [23] 0.0527       [24] 0.0526       [25] 0.0526       [26] 0.0527       [27] 0.0527       [28] 0.0528       [29] 0.0527       [30] 0.0527       [31] 0.0526       [32] 0.0526       [33] 0.0526       [34] 0.0527       [35] 0.1984       [36] 0.1279       [37] 0.0528       [38] 0.0527       [39] 0.0526       [40] 0.0527       [41] 0.0527       [42] 0.0835       [43] 0.0504       [44] 0.0503       [45] 0.0503       [46] 0.0504       [47] 0.0504       [48] 0.0504       [49] 0.0503       
+Average Utilization Factor for task ID 1: 0.0659 , computation time: 32940ns
+
+ID 2 , period: 800000 , cycles: 2000
+Testing the task 50 times ...
+[0] 0.0627       [1] 0.0626       [2] 0.0626       [3] 0.0627       [4] 0.0626       [5] 0.0626       [6] 0.0626       [7] 0.0626       [8] 0.0626       [9] 0.0848       [10] 0.0627       [11] 0.0627       [12] 0.0626       [13] 0.0626       [14] 0.0627       [15] 0.0626       [16] 0.0627       [17] 0.0626       [18] 0.0626       [19] 0.0626       [20] 0.0626       [21] 0.0626       [22] 0.0626       [23] 0.0627       [24] 0.0626       [25] 0.0626       [26] 0.0627       [27] 0.0627       [28] 0.0626       [29] 0.1382       [30] 0.1098       [31] 0.0626       [32] 0.0626       [33] 0.0626       [34] 2.0520       [35] 0.0629       [36] 0.2903       [37] 0.0627       [38] 0.0626       [39] 0.0626       [40] 0.0626       [41] 0.0626       [42] 0.0626       [43] 0.0626       [44] 0.0626       [45] 0.0626       [46] 0.0626       [47] 0.0626       [48] 0.0626       [49] 0.0626       
+Average Utilization Factor for task ID 2: 0.1099 , computation time: 87894ns
+
+Utilization factor: 0.199921
+No harmonic relationship. Using Ulub(RM)=0.779... 
+U(0.199921) <= Ulub(0.779763) ?	OK! 
+   waiting 5 seconds ...
+Preparing threads for scheduling ...
+scheduling...
+
+
+
+computing misses...
+===== TASK J1 =====
+	T=300000		C=7252
+J1 [1 on 100] - arrival=0 - ending=30008 - duration=30008 - miss? No
+J1 [2 on 100] - arrival=388933 - ending=410491 - duration=21558 - miss? No
+J1 [3 on 100] - arrival=999852 - ending=1023256 - duration=23404 - miss? No
+J1 [4 on 100] - arrival=1066957 - ending=1088369 - duration=21412 - miss? No
+J1 [5 on 100] - arrival=1214828 - ending=1235884 - duration=21056 - miss? No
+J1 [6 on 100] - arrival=1525601 - ending=1547128 - duration=21527 - miss? No
+J1 [7 on 100] - arrival=1937021 - ending=1958496 - duration=21475 - miss? No
+J1 [8 on 100] - arrival=2126039 - ending=2147154 - duration=21115 - miss? No
+J1 [9 on 100] - arrival=2941951 - ending=2963792 - duration=21841 - miss? No
+J1 [10 on 100] - arrival=3006976 - ending=3028341 - duration=21365 - miss? No
+J1 [11 on 100] - arrival=3069508 - ending=3090922 - duration=21414 - miss? No
+J1 [12 on 100] - arrival=3590279 - ending=3612576 - duration=22297 - miss? No
+J1 [13 on 100] - arrival=3656325 - ending=3678591 - duration=22266 - miss? No
+J1 [14 on 100] - arrival=3948016 - ending=3970131 - duration=22115 - miss? No
+J1 [15 on 100] - arrival=4996754 - ending=5021392 - duration=24638 - miss? No
+J1 [16 on 100] - arrival=5068227 - ending=5090676 - duration=22449 - miss? No
+J1 [17 on 100] - arrival=5132943 - ending=5182855 - duration=49912 - miss? No
+J1 [18 on 100] - arrival=5223089 - ending=5244245 - duration=21156 - miss? No
+J1 [19 on 100] - arrival=5428715 - ending=5450222 - duration=21507 - miss? No
+J1 [20 on 100] - arrival=5714646 - ending=5735865 - duration=21219 - miss? No
+J1 [21 on 100] - arrival=6040680 - ending=6103385 - duration=62705 - miss? No
+J1 [22 on 100] - arrival=6360528 - ending=6381891 - duration=21363 - miss? No
+J1 [23 on 100] - arrival=6619335 - ending=6640715 - duration=21380 - miss? No
+J1 [24 on 100] - arrival=6959708 - ending=6980862 - duration=21154 - miss? No
+J1 [25 on 100] - arrival=7842368 - ending=7882575 - duration=40207 - miss? No
+J1 [26 on 100] - arrival=7923530 - ending=7944850 - duration=21320 - miss? No
+J1 [27 on 100] - arrival=7984471 - ending=8005715 - duration=21244 - miss? No
+J1 [28 on 100] - arrival=8128904 - ending=8149978 - duration=21074 - miss? No
+J1 [29 on 100] - arrival=8512423 - ending=8533789 - duration=21366 - miss? No
+J1 [30 on 100] - arrival=8729777 - ending=8751078 - duration=21301 - miss? No
+J1 [31 on 100] - arrival=9869647 - ending=9892367 - duration=22720 - miss? No
+J1 [32 on 100] - arrival=9934018 - ending=9955358 - duration=21340 - miss? No
+J1 [33 on 100] - arrival=9995056 - ending=10016341 - duration=21285 - miss? No
+J1 [34 on 100] - arrival=10056985 - ending=10078096 - duration=21111 - miss? No
+J1 [35 on 100] - arrival=10231927 - ending=10253179 - duration=21252 - miss? No
+J1 [36 on 100] - arrival=10618225 - ending=10639597 - duration=21372 - miss? No
+J1 [37 on 100] - arrival=10902853 - ending=10924142 - duration=21289 - miss? No
+J1 [38 on 100] - arrival=11121819 - ending=11143232 - duration=21413 - miss? No
+J1 [39 on 100] - arrival=11826356 - ending=11848706 - duration=22350 - miss? No
+J1 [40 on 100] - arrival=11889884 - ending=11911068 - duration=21184 - miss? No
+J1 [41 on 100] - arrival=12188847 - ending=12210162 - duration=21315 - miss? No
+J1 [42 on 100] - arrival=12465618 - ending=12486876 - duration=21258 - miss? No
+J1 [43 on 100] - arrival=12982241 - ending=13004990 - duration=22749 - miss? No
+J1 [44 on 100] - arrival=13045987 - ending=13067935 - duration=21948 - miss? No
+J1 [45 on 100] - arrival=13221090 - ending=13242424 - duration=21334 - miss? No
+J1 [46 on 100] - arrival=13529743 - ending=13551056 - duration=21313 - miss? No
+J1 [47 on 100] - arrival=13852079 - ending=13874848 - duration=22769 - miss? No
+J1 [48 on 100] - arrival=14868561 - ending=14891214 - duration=22653 - miss? No
+J1 [49 on 100] - arrival=14934339 - ending=14955498 - duration=21159 - miss? No
+J1 [50 on 100] - arrival=14995572 - ending=15016706 - duration=21134 - miss? No
+J1 [51 on 100] - arrival=15056082 - ending=15077185 - duration=21103 - miss? No
+J1 [52 on 100] - arrival=15371876 - ending=15428663 - duration=56787 - miss? No
+J1 [53 on 100] - arrival=15613797 - ending=15640361 - duration=26564 - miss? No
+J1 [54 on 100] - arrival=15942836 - ending=15985193 - duration=42357 - miss? No
+J1 [55 on 100] - arrival=16228507 - ending=16249882 - duration=21375 - miss? No
+J1 [56 on 100] - arrival=16528355 - ending=16549659 - duration=21304 - miss? No
+J1 [57 on 100] - arrival=17780188 - ending=17803859 - duration=23671 - miss? No
+J1 [58 on 100] - arrival=17847099 - ending=17868417 - duration=21318 - miss? No
+J1 [59 on 100] - arrival=17908424 - ending=17930016 - duration=21592 - miss? No
+J1 [60 on 100] - arrival=17969765 - ending=17990809 - duration=21044 - miss? No
+J1 [61 on 100] - arrival=18031034 - ending=18052070 - duration=21036 - miss? No
+J1 [62 on 100] - arrival=18315294 - ending=18336478 - duration=21184 - miss? No
+J1 [63 on 100] - arrival=18638667 - ending=18659814 - duration=21147 - miss? No
+J1 [64 on 100] - arrival=18955747 - ending=18976900 - duration=21153 - miss? No
+J1 [65 on 100] - arrival=19246678 - ending=19267831 - duration=21153 - miss? No
+J1 [66 on 100] - arrival=19741392 - ending=19764328 - duration=22936 - miss? No
+J1 [67 on 100] - arrival=19837070 - ending=19858356 - duration=21286 - miss? No
+J1 [68 on 100] - arrival=20111839 - ending=20133030 - duration=21191 - miss? No
+J1 [69 on 100] - arrival=20452811 - ending=20474211 - duration=21400 - miss? No
+J1 [70 on 100] - arrival=20790358 - ending=20813192 - duration=22834 - miss? No
+J1 [71 on 100] - arrival=21680303 - ending=21703011 - duration=22708 - miss? No
+J1 [72 on 100] - arrival=21746106 - ending=21767268 - duration=21162 - miss? No
+J1 [73 on 100] - arrival=21806873 - ending=21828000 - duration=21127 - miss? No
+J1 [74 on 100] - arrival=21951949 - ending=21973167 - duration=21218 - miss? No
+J1 [75 on 100] - arrival=22339546 - ending=22360729 - duration=21183 - miss? No
+J1 [76 on 100] - arrival=22604167 - ending=22625529 - duration=21362 - miss? No
+J1 [77 on 100] - arrival=22893158 - ending=22932454 - duration=39296 - miss? No
+J1 [78 on 100] - arrival=23746676 - ending=23769421 - duration=22745 - miss? No
+J1 [79 on 100] - arrival=23812553 - ending=23833694 - duration=21141 - miss? No
+J1 [80 on 100] - arrival=23873483 - ending=23894533 - duration=21050 - miss? No
+J1 [81 on 100] - arrival=24018608 - ending=24039721 - duration=21113 - miss? No
+J1 [82 on 100] - arrival=24434435 - ending=24456776 - duration=22341 - miss? No
+J1 [83 on 100] - arrival=24699814 - ending=24721038 - duration=21224 - miss? No
+J1 [84 on 100] - arrival=25672832 - ending=25695478 - duration=22646 - miss? No
+J1 [85 on 100] - arrival=25738845 - ending=25759975 - duration=21130 - miss? No
+J1 [86 on 100] - arrival=25799803 - ending=25820901 - duration=21098 - miss? No
+J1 [87 on 100] - arrival=25861613 - ending=25882683 - duration=21070 - miss? No
+J1 [88 on 100] - arrival=26116885 - ending=26137935 - duration=21050 - miss? No
+J1 [89 on 100] - arrival=26422811 - ending=26444104 - duration=21293 - miss? No
+J1 [90 on 100] - arrival=26737738 - ending=26758885 - duration=21147 - miss? No
+J1 [91 on 100] - arrival=27630459 - ending=27653160 - duration=22701 - miss? No
+J1 [92 on 100] - arrival=27696439 - ending=27717832 - duration=21393 - miss? No
+J1 [93 on 100] - arrival=27758455 - ending=27779752 - duration=21297 - miss? No
+J1 [94 on 100] - arrival=27934141 - ending=27955458 - duration=21317 - miss? No
+J1 [95 on 100] - arrival=28366261 - ending=28387658 - duration=21397 - miss? No
+J1 [96 on 100] - arrival=28603222 - ending=28666796 - duration=63574 - miss? No
+J1 [97 on 100] - arrival=28831556 - ending=28852842 - duration=21286 - miss? No
+J1 [98 on 100] - arrival=29652960 - ending=29675661 - duration=22701 - miss? No
+J1 [99 on 100] - arrival=29718695 - ending=29739879 - duration=21184 - miss? No
+J1 [100 on 100] - arrival=29780219 - ending=29801316 - duration=21097 - miss? No
+
+Total Misses for the task [1]: [0] on [100] cycles 
+
+===== TASK J2 =====
+	T=500000		C=32940
+J2 [1 on 100] - arrival=71385 - ending=138826 - duration=67441 - miss? No
+J2 [2 on 100] - arrival=1103358 - ending=1170687 - duration=67329 - miss? No
+J2 [3 on 100] - arrival=1249331 - ending=1316109 - duration=66778 - miss? No
+J2 [4 on 100] - arrival=1614090 - ending=1681841 - duration=67751 - miss? No
+J2 [5 on 100] - arrival=2160334 - ending=2227660 - duration=67326 - miss? No
+J2 [6 on 100] - arrival=3104959 - ending=3171974 - duration=67015 - miss? No
+J2 [7 on 100] - arrival=3239240 - ending=3357832 - duration=118592 - miss? No
+J2 [8 on 100] - arrival=3693396 - ending=3763982 - duration=70586 - miss? No
+J2 [9 on 100] - arrival=5258603 - ending=5325700 - duration=67097 - miss? No
+J2 [10 on 100] - arrival=5463908 - ending=5531598 - duration=67690 - miss? No
+J2 [11 on 100] - arrival=5575044 - ending=5642300 - duration=67256 - miss? No
+J2 [12 on 100] - arrival=5749268 - ending=5832118 - duration=82850 - miss? No
+J2 [13 on 100] - arrival=6116530 - ending=6183511 - duration=66981 - miss? No
+J2 [14 on 100] - arrival=6654318 - ending=6721246 - duration=66928 - miss? No
+J2 [15 on 100] - arrival=8018962 - ending=8086355 - duration=67393 - miss? No
+J2 [16 on 100] - arrival=8151282 - ending=8216570 - duration=65288 - miss? No
+J2 [17 on 100] - arrival=8256918 - ending=8324075 - duration=67157 - miss? No
+J2 [18 on 100] - arrival=8752545 - ending=8899415 - duration=146870 - miss? No
+J2 [19 on 100] - arrival=10092289 - ending=10159133 - duration=66844 - miss? No
+J2 [20 on 100] - arrival=10266392 - ending=10333533 - duration=67141 - miss? No
+J2 [21 on 100] - arrival=10376410 - ending=10443986 - duration=67576 - miss? No
+J2 [22 on 100] - arrival=10652905 - ending=10719785 - duration=66880 - miss? No
+J2 [23 on 100] - arrival=11144728 - ending=11210128 - duration=65400 - miss? No
+J2 [24 on 100] - arrival=11924744 - ending=11992201 - duration=67457 - miss? No
+J2 [25 on 100] - arrival=12220883 - ending=12287723 - duration=66840 - miss? No
+J2 [26 on 100] - arrival=13081606 - ending=13149051 - duration=67445 - miss? No
+J2 [27 on 100] - arrival=13255581 - ending=13322647 - duration=67066 - miss? No
+J2 [28 on 100] - arrival=13586504 - ending=13653663 - duration=67159 - miss? No
+J2 [29 on 100] - arrival=15091727 - ending=15196563 - duration=104836 - miss? No
+J2 [30 on 100] - arrival=15240160 - ending=15307608 - duration=67448 - miss? No
+J2 [31 on 100] - arrival=15442733 - ending=15525489 - duration=82756 - miss? No
+J2 [32 on 100] - arrival=15618295 - ending=15749054 - duration=130759 - miss? No
+J2 [33 on 100] - arrival=16251447 - ending=16316841 - duration=65394 - miss? No
+J2 [34 on 100] - arrival=16583322 - ending=16650584 - duration=67262 - miss? No
+J2 [35 on 100] - arrival=18066584 - ending=18133529 - duration=66945 - miss? No
+J2 [36 on 100] - arrival=18176958 - ending=18244165 - duration=67207 - miss? No
+J2 [37 on 100] - arrival=18349642 - ending=18416504 - duration=66862 - miss? No
+J2 [38 on 100] - arrival=18697043 - ending=18779669 - duration=82626 - miss? No
+J2 [39 on 100] - arrival=19144471 - ending=19211737 - duration=67266 - miss? No
+J2 [40 on 100] - arrival=19869591 - ending=19936403 - duration=66812 - miss? No
+J2 [41 on 100] - arrival=20134560 - ending=20199926 - duration=65366 - miss? No
+J2 [42 on 100] - arrival=20815340 - ending=20880793 - duration=65453 - miss? No
+J2 [43 on 100] - arrival=21842278 - ending=21909196 - duration=66918 - miss? No
+J2 [44 on 100] - arrival=21986298 - ending=22053280 - duration=66982 - miss? No
+J2 [45 on 100] - arrival=22096206 - ending=22163319 - duration=67113 - miss? No
+J2 [46 on 100] - arrival=22639397 - ending=22706296 - duration=66899 - miss? No
+J2 [47 on 100] - arrival=23909119 - ending=23976116 - duration=66997 - miss? No
+J2 [48 on 100] - arrival=24050241 - ending=24117166 - duration=66925 - miss? No
+J2 [49 on 100] - arrival=24157059 - ending=24224142 - duration=67083 - miss? No
+J2 [50 on 100] - arrival=24735144 - ending=24802044 - duration=66900 - miss? No
+J2 [51 on 100] - arrival=25897399 - ending=25964268 - duration=66869 - miss? No
+J2 [52 on 100] - arrival=26007763 - ending=26074989 - duration=67226 - miss? No
+J2 [53 on 100] - arrival=26151030 - ending=26217887 - duration=66857 - miss? No
+J2 [54 on 100] - arrival=26596632 - ending=26663864 - duration=67232 - miss? No
+J2 [55 on 100] - arrival=27794494 - ending=27861457 - duration=66963 - miss? No
+J2 [56 on 100] - arrival=27968937 - ending=28035774 - duration=66837 - miss? No
+J2 [57 on 100] - arrival=28107954 - ending=28175289 - duration=67335 - miss? No
+J2 [58 on 100] - arrival=28681543 - ending=28766289 - duration=84746 - miss? No
+J2 [59 on 100] - arrival=29815933 - ending=29882897 - duration=66964 - miss? No
+J2 [60 on 100] - arrival=29926316 - ending=29993470 - duration=67154 - miss? No
+J2 [61 on 100] - arrival=30445459 - ending=30521968 - duration=76509 - miss? No
+J2 [62 on 100] - arrival=30608351 - ending=30675717 - duration=67366 - miss? No
+J2 [63 on 100] - arrival=31158016 - ending=31225240 - duration=67224 - miss? No
+J2 [64 on 100] - arrival=31606192 - ending=31713294 - duration=107102 - miss? No
+J2 [65 on 100] - arrival=32614348 - ending=32684372 - duration=70024 - miss? No
+J2 [66 on 100] - arrival=32729482 - ending=32819772 - duration=90290 - miss? No
+J2 [67 on 100] - arrival=33213456 - ending=33280737 - duration=67281 - miss? No
+J2 [68 on 100] - arrival=34580209 - ending=34649160 - duration=68951 - miss? No
+J2 [69 on 100] - arrival=34692490 - ending=34759677 - duration=67187 - miss? No
+J2 [70 on 100] - arrival=34800816 - ending=34867956 - duration=67140 - miss? No
+J2 [71 on 100] - arrival=35087157 - ending=35154117 - duration=66960 - miss? No
+J2 [72 on 100] - arrival=35608372 - ending=35677029 - duration=68657 - miss? No
+J2 [73 on 100] - arrival=36609334 - ending=36678028 - duration=68694 - miss? No
+J2 [74 on 100] - arrival=36722125 - ending=36789384 - duration=67259 - miss? No
+J2 [75 on 100] - arrival=37145595 - ending=37212724 - duration=67129 - miss? No
+J2 [76 on 100] - arrival=38479143 - ending=38547779 - duration=68636 - miss? No
+J2 [77 on 100] - arrival=38590993 - ending=38658105 - duration=67112 - miss? No
+J2 [78 on 100] - arrival=38698623 - ending=38765655 - duration=67032 - miss? No
+J2 [79 on 100] - arrival=39123328 - ending=39190594 - duration=67266 - miss? No
+J2 [80 on 100] - arrival=39607350 - ending=39675927 - duration=68577 - miss? No
+J2 [81 on 100] - arrival=40553764 - ending=40622499 - duration=68735 - miss? No
+J2 [82 on 100] - arrival=40666626 - ending=40733813 - duration=67187 - miss? No
+J2 [83 on 100] - arrival=41559496 - ending=41681151 - duration=121655 - miss? No
+J2 [84 on 100] - arrival=41724412 - ending=41791505 - duration=67093 - miss? No
+J2 [85 on 100] - arrival=42149421 - ending=42216689 - duration=67268 - miss? No
+J2 [86 on 100] - arrival=43474779 - ending=43543409 - duration=68630 - miss? No
+J2 [87 on 100] - arrival=43586741 - ending=43654011 - duration=67270 - miss? No
+J2 [88 on 100] - arrival=43694424 - ending=43788049 - duration=93625 - miss? No
+J2 [89 on 100] - arrival=44115873 - ending=44183171 - duration=67298 - miss? No
+J2 [90 on 100] - arrival=44636487 - ending=44703869 - duration=67382 - miss? No
+J2 [91 on 100] - arrival=45409680 - ending=45478246 - duration=68566 - miss? No
+J2 [92 on 100] - arrival=45663368 - ending=45730412 - duration=67044 - miss? No
+J2 [93 on 100] - arrival=46528456 - ending=46597126 - duration=68670 - miss? No
+J2 [94 on 100] - arrival=46633211 - ending=46700591 - duration=67380 - miss? No
+J2 [95 on 100] - arrival=47400310 - ending=47469021 - duration=68711 - miss? No
+J2 [96 on 100] - arrival=47652347 - ending=47719571 - duration=67224 - miss? No
+J2 [97 on 100] - arrival=48487847 - ending=48556396 - duration=68549 - miss? No
+J2 [98 on 100] - arrival=48600768 - ending=48667848 - duration=67080 - miss? No
+J2 [99 on 100] - arrival=49363974 - ending=49432650 - duration=68676 - miss? No
+J2 [100 on 100] - arrival=49616582 - ending=49683733 - duration=67151 - miss? No
+
+Total Misses for the task [2]: [0] on [100] cycles 
+
+===== TASK J3 =====
+	T=800000		C=87894
+J3 [1 on 100] - arrival=163797 - ending=294901 - duration=131104 - miss? No
+J3 [2 on 100] - arrival=1317583 - ending=1448137 - duration=130554 - miss? No
+J3 [3 on 100] - arrival=1960079 - ending=2089529 - duration=129450 - miss? No
+J3 [4 on 100] - arrival=3382228 - ending=3517978 - duration=135750 - miss? No
+J3 [5 on 100] - arrival=3765288 - ending=3909203 - duration=143915 - miss? No
+J3 [6 on 100] - arrival=5834211 - ending=5964054 - duration=129843 - miss? No
+J3 [7 on 100] - arrival=6184566 - ending=6314970 - duration=130404 - miss? No
+J3 [8 on 100] - arrival=6383198 - ending=6512715 - duration=129517 - miss? No
+J3 [9 on 100] - arrival=6722323 - ending=6892296 - duration=169973 - miss? No
+J3 [10 on 100] - arrival=8325891 - ending=8455224 - duration=129333 - miss? No
+J3 [11 on 100] - arrival=8535117 - ending=8664700 - duration=129583 - miss? No
+J3 [12 on 100] - arrival=10445881 - ending=10575413 - duration=129532 - miss? No
+J3 [13 on 100] - arrival=10720843 - ending=10857665 - duration=136822 - miss? No
+J3 [14 on 100] - arrival=10925403 - ending=11054975 - duration=129572 - miss? No
+J3 [15 on 100] - arrival=11993416 - ending=12123884 - duration=130468 - miss? No
+J3 [16 on 100] - arrival=12288728 - ending=12418009 - duration=129281 - miss? No
+J3 [17 on 100] - arrival=13323883 - ending=13493604 - duration=169721 - miss? No
+J3 [18 on 100] - arrival=13876978 - ending=14006386 - duration=129408 - miss? No
+J3 [19 on 100] - arrival=15538884 - ending=15897541 - duration=358657 - miss? No
+J3 [20 on 100] - arrival=15986550 - ending=16131917 - duration=145367 - miss? No
+J3 [21 on 100] - arrival=16317754 - ending=16447071 - duration=129317 - miss? No
+J3 [22 on 100] - arrival=18429518 - ending=18565296 - duration=135778 - miss? No
+J3 [23 on 100] - arrival=18780947 - ending=18910342 - duration=129395 - miss? No
+J3 [24 on 100] - arrival=18978165 - ending=19107575 - duration=129410 - miss? No
+J3 [25 on 100] - arrival=19947306 - ending=20078222 - duration=130916 - miss? No
+J3 [26 on 100] - arrival=20232067 - ending=20363341 - duration=131274 - miss? No
+J3 [27 on 100] - arrival=22165166 - ending=22294553 - duration=129387 - miss? No
+J3 [28 on 100] - arrival=22373857 - ending=22504764 - duration=130907 - miss? No
+J3 [29 on 100] - arrival=22707399 - ending=22836775 - duration=129376 - miss? No
+J3 [30 on 100] - arrival=24225973 - ending=24355389 - duration=129416 - miss? No
+J3 [31 on 100] - arrival=24458253 - ending=24844999 - duration=386746 - miss? No
+J3 [32 on 100] - arrival=26219137 - ending=26348470 - duration=129333 - miss? No
+J3 [33 on 100] - arrival=26445544 - ending=26692349 - duration=246805 - miss? No
+J3 [34 on 100] - arrival=26771949 - ending=26902884 - duration=130935 - miss? No
+J3 [35 on 100] - arrival=28177215 - ending=28306578 - duration=129363 - miss? No
+J3 [36 on 100] - arrival=28399066 - ending=28537608 - duration=138542 - miss? No
+J3 [37 on 100] - arrival=29995421 - ending=30124925 - duration=129504 - miss? No
+J3 [38 on 100] - arrival=30689555 - ending=30820671 - duration=131116 - miss? No
+J3 [39 on 100] - arrival=30864429 - ending=31100432 - duration=236003 - miss? No
+J3 [40 on 100] - arrival=31729804 - ending=31860947 - duration=131143 - miss? No
+J3 [41 on 100] - arrival=32835582 - ending=32972900 - duration=137318 - miss? No
+J3 [42 on 100] - arrival=33019829 - ending=33171705 - duration=151876 - miss? No
+J3 [43 on 100] - arrival=34882806 - ending=35013854 - duration=131048 - miss? No
+J3 [44 on 100] - arrival=35167599 - ending=35298670 - duration=131071 - miss? No
+J3 [45 on 100] - arrival=35692391 - ending=35823528 - duration=131137 - miss? No
+J3 [46 on 100] - arrival=36803411 - ending=36934491 - duration=131080 - miss? No
+J3 [47 on 100] - arrival=36978042 - ending=37109240 - duration=131198 - miss? No
+J3 [48 on 100] - arrival=38780389 - ending=38911377 - duration=130988 - miss? No
+J3 [49 on 100] - arrival=38954918 - ending=39086069 - duration=131151 - miss? No
+J3 [50 on 100] - arrival=39691598 - ending=39822633 - duration=131035 - miss? No
+J3 [51 on 100] - arrival=40748520 - ending=40879650 - duration=131130 - miss? No
+J3 [52 on 100] - arrival=41806064 - ending=41937273 - duration=131209 - miss? No
+J3 [53 on 100] - arrival=41980626 - ending=42111950 - duration=131324 - miss? No
+J3 [54 on 100] - arrival=43823078 - ending=43975839 - duration=152761 - miss? No
+J3 [55 on 100] - arrival=44184617 - ending=44313962 - duration=129345 - miss? No
+J3 [56 on 100] - arrival=44442834 - ending=44597865 - duration=155031 - miss? No
+J3 [57 on 100] - arrival=45494072 - ending=45625315 - duration=131243 - miss? No
+J3 [58 on 100] - arrival=45796364 - ending=45927675 - duration=131311 - miss? No
+J3 [59 on 100] - arrival=46714295 - ending=46845376 - duration=131081 - miss? No
+J3 [60 on 100] - arrival=47484721 - ending=47615780 - duration=131059 - miss? No
+J3 [61 on 100] - arrival=48682380 - ending=48813386 - duration=131006 - miss? No
+J3 [62 on 100] - arrival=49448481 - ending=49579558 - duration=131077 - miss? No
+J3 [63 on 100] - arrival=50364647 - ending=50496845 - duration=132198 - miss? No
+J3 [64 on 100] - arrival=51372776 - ending=51505535 - duration=132759 - miss? No
+J3 [65 on 100] - arrival=51549220 - ending=51680561 - duration=131341 - miss? No
+J3 [66 on 100] - arrival=52372796 - ending=52534014 - duration=161218 - miss? No
+J3 [67 on 100] - arrival=53481687 - ending=53614569 - duration=132882 - miss? No
+J3 [68 on 100] - arrival=54314222 - ending=54447054 - duration=132832 - miss? No
+J3 [69 on 100] - arrival=55311154 - ending=55464184 - duration=153030 - miss? No
+J3 [70 on 100] - arrival=55508121 - ending=55639428 - duration=131307 - miss? No
+J3 [71 on 100] - arrival=56387856 - ending=56520833 - duration=132977 - miss? No
+J3 [72 on 100] - arrival=57269474 - ending=57402346 - duration=132872 - miss? No
+J3 [73 on 100] - arrival=58269314 - ending=58402062 - duration=132748 - miss? No
+J3 [74 on 100] - arrival=59227689 - ending=59360609 - duration=132920 - miss? No
+J3 [75 on 100] - arrival=59403860 - ending=59535396 - duration=131536 - miss? No
+J3 [76 on 100] - arrival=60260466 - ending=60393489 - duration=133023 - miss? No
+J3 [77 on 100] - arrival=61259252 - ending=61392104 - duration=132852 - miss? No
+J3 [78 on 100] - arrival=62248819 - ending=62381648 - duration=132829 - miss? No
+J3 [79 on 100] - arrival=63247985 - ending=63404465 - duration=156480 - miss? No
+J3 [80 on 100] - arrival=63486683 - ending=63624150 - duration=137467 - miss? No
+J3 [81 on 100] - arrival=64186548 - ending=64319542 - duration=132994 - miss? No
+J3 [82 on 100] - arrival=65227760 - ending=65398731 - duration=170971 - miss? No
+J3 [83 on 100] - arrival=66173934 - ending=66340981 - duration=167047 - miss? No
+J3 [84 on 100] - arrival=67162260 - ending=67295299 - duration=133039 - miss? No
+J3 [85 on 100] - arrival=68129262 - ending=68262630 - duration=133368 - miss? No
+J3 [86 on 100] - arrival=68358463 - ending=68535482 - duration=177019 - miss? No
+J3 [87 on 100] - arrival=69173249 - ending=69306394 - duration=133145 - miss? No
+J3 [88 on 100] - arrival=70295586 - ending=70481528 - duration=185942 - miss? No
+J3 [89 on 100] - arrival=71272785 - ending=71405585 - duration=132800 - miss? No
+J3 [90 on 100] - arrival=71448928 - ending=71580285 - duration=131357 - miss? No
+J3 [91 on 100] - arrival=72248442 - ending=72381296 - duration=132854 - miss? No
+J3 [92 on 100] - arrival=73103515 - ending=73236355 - duration=132840 - miss? No
+J3 [93 on 100] - arrival=74277467 - ending=74410263 - duration=132796 - miss? No
+J3 [94 on 100] - arrival=75207613 - ending=75340450 - duration=132837 - miss? No
+J3 [95 on 100] - arrival=75383642 - ending=75514850 - duration=131208 - miss? No
+J3 [96 on 100] - arrival=76206789 - ending=76339615 - duration=132826 - miss? No
+J3 [97 on 100] - arrival=77315713 - ending=77448537 - duration=132824 - miss? No
+J3 [98 on 100] - arrival=78172153 - ending=78305018 - duration=132865 - miss? No
+J3 [99 on 100] - arrival=79166477 - ending=79299374 - duration=132897 - miss? No
+J3 [100 on 100] - arrival=79379133 - ending=79510652 - duration=131519 - miss? No
+
+Total Misses for the task [3]: [0] on [100] cycles 
+
+Miss rate: 0.000000
+
+
+dump command to the module (see dmesg)
+closing module
+DONE! closing...
+

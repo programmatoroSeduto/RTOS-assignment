@@ -22,7 +22,7 @@ long int Jperiod[N_PERIODIC_TASKS];
 long int Jcycles[N_PERIODIC_TASKS];
 long int Jcycles_ns[N_PERIODIC_TASKS];
 
-// relative references for computing the time in  which the task has to be scheduled again
+// relative references for computing the time in which the task has to be scheduled again
 struct timespec Jarrival[N_PERIODIC_TASKS][N_CYCLES];
 // real arrival time and real ending time
 struct timespec Jarrival_real[N_PERIODIC_TASKS][N_CYCLES];

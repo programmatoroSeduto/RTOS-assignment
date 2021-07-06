@@ -28,9 +28,21 @@ double miss_rate = 0.f;
 //    Ci=1 cycle -> 180ns
 int J[3][2] = {
 	{300, 280},
-	{500, 500},
-	{800, 800},
+	{500, 1000},
+	{800, 2000},
 };
+
+
+
+
+
+// check the harmonic relationship
+int check_harmonic_relationship( )
+{
+    return ( ( (J[0][0] % J[1][0] ) == 0 || (J[1][0] % J[0][0] ) == 0 ) &&
+        ( (J[2][0] % J[1][0] ) == 0 || (J[1][0] % J[2][0] ) == 0 ) &&
+        ( (J[0][0] % J[2][0] ) == 0 || (J[2][0] % J[0][0] ) == 0 ) );
+}
 
 
 
@@ -177,19 +189,26 @@ int main( int argc, char* argv[] )
 
     // test schedulability
     sched_setparam( pthread_self(), &prio_max );
-    printf( "COmputing utilization factor...\n\n" );
+    printf( "Computing utilization factor...\n\n" );
     float U = get_utilization_factor();
     sched_setparam( pthread_self(), &prio_min );
     printf( "Utilization factor: %f\n", U );
     
-    float Ulub = 1.f; // harmonic relationship in this case (RM scheduling algorithm)
+    int harm_rel = check_harmonic_relationship();
+    if( harm_rel )
+        printf( "Harmonic Relationship: Ulub(RM)=1.0 \n" );
+    else
+        printf( "No harmonic relationship. Using Ulub(RM)=0.779... \n" );
+    float Ulub = ( harm_rel ? 1.f : 0.779763149f );
+    
+    printf( "U(%f) <= Ulub(%f) ?\t", U, Ulub );
     if ( U > Ulub )
     {
-        printf( "ERROR: not schedulable set. U(%f) > Ulub(%f)\n", U, Ulub );
+        printf( "\nERROR: not schedulable set. U(%f) > Ulub(%f)\n", U, Ulub );
         exit( EXIT_FAILURE );
     }
 
-    printf( "OK! waiting %d seconds ...\n", SLEEP_SECS );
+    printf( "OK! \n   waiting %d seconds ...\n", SLEEP_SECS ); fflush( stdout );
     sleep(SLEEP_SECS);
 
     // setting threads
