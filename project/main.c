@@ -24,12 +24,13 @@
 double miss_rate = 0.f;
 
 // tasks
-int T1 = 300;
-int C1 = 20;
-int T2 = 400;
-int C2 = 100;
-int T3 = 580;
-int C3 = 400;
+//    Ji(Ti, Ci)
+//    Ci=1 cycle -> 180ns
+int J[3][2] = {
+	{300, 280},
+	{500, 500},
+	{800, 800},
+};
 
 
 
@@ -128,18 +129,34 @@ void compute_miss()
 
 
 
-
-int main( int argc, char** argv )
-{
+//    SIMPLE CALL:
+// ./main
+//    WITH TASKS
+// ./main T1 C1 T2 C2 T3 C3
+int main( int argc, char* argv[] )
+{	
     // check if the program is superuser or not
     if( getuid() > 0 )
     {
         printf( "ERROR: not a superuser! PLease launch this application as su.\n" );
         exit( EXIT_FAILURE );
     }
+    
+    if( argc > 1 )
+    {
+    	// printf( "reading tasks from command line... (%d args)\n\t", argc-1 );
+    	for( int i=1; i<argc && i<7 ; i++ )
+    	{
+    		// printf( "%d(%d)(%s) ", (i-1)/2, (i-1)%2, argv[i] );
+    		J[(i-1)/2][(i-1)%2] = atoi( argv[i] );
+    		// printf( "%s%d = %d   ", ( ((i-1)%2)==0 ? "T" : "C" ), ((i-1)/2 + 1), J[i/2][(i-1)%2] );
+    	}
+        printf( "\n" );
+    }
+   	printf( "using values: \n\t T1=%d\tC1=%d\n\t T2=%d\tC2=%d\n\t T3=%d\tC3=%d\n", J[0][0], J[0][1], J[1][0], J[1][1], J[2][0], J[2][1] );
 
     // open the channel with the driver
-    if( module_init() < 0)
+    if( module_init() < 0 )
     {
         printf( "ERROR: unable to open the module! errno=%d.\n", errno ); fflush(stdout);
         perror( "error" );
@@ -148,7 +165,7 @@ int main( int argc, char** argv )
 
     // check parameters before starting
     printf( "initializing data...\n" );
-    task_init( T1, C2, T2, C2, T3, C3 );
+    task_init( J[0][0], J[0][1], J[1][0], J[1][1], J[2][0], J[2][1] );
     printf( "simulation of %d real time periodic tasks.\n", N_PERIODIC_TASKS );
 
     // get priorities
